@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JapaneseGarden.unity
     guid: 02ba8e5041aaad84084bfd6a5babd688
+  - enabled: 1
+    path: Assets/Scenes/PeacefullBattlefield.unity
+    guid: c3f237f0d13cace4e9a9e02b558ce336
+  - enabled: 1
+    path: Assets/Scenes/DojoAsset.unity
+    guid: a02728bb9744a324b80b5a9985872782
+  - enabled: 0
+    path: Assets/Snow Mountain/Scenes/SnowMountains.unity
+    guid: 80a7b5808b43ae245bc2c97ce3cfc017
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5f21a88a9e1e52e439e526bb04442723, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 21cc09f92c6d3604f99f562cce042a1a, type: 2}
