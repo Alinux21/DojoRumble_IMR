@@ -3,12 +3,12 @@ using UnityEngine.AI; // For navigation AI
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform player; // Reference to the player
-    public float attackRange = 2.5f; // Range to start attacking
+    public Transform player;
+    public float attackRange = 2.5f;
     public float moveSpeed = 1.5f;
     public float attackCooldown = 0.5f;
 
-    private Animation animationComponent; // Reference to the Legacy Animation component
+    private Animation animationComponent;
     private NavMeshAgent navAgent;
     private float lastAttackTime = 0f;
 
@@ -17,14 +17,12 @@ public class EnemyAI : MonoBehaviour
         animationComponent = GetComponent<Animation>();
         navAgent = GetComponent<NavMeshAgent>();
 
-        // Ensure animations are assigned
         if (animationComponent == null)
         {
             Debug.LogError("No Animation component found on this GameObject. Add an Animation component and assign animations.");
             return;
         }
 
-        // Ensure required animations are present
         if (!animationComponent["Walk"] || !animationComponent["Attack"] || !animationComponent["idle"])
         {
             Debug.LogError("Animations 'Walk', 'Attack', and 'idle' are missing. Ensure they are assigned in the Animation component.");
@@ -55,7 +53,6 @@ public class EnemyAI : MonoBehaviour
         navAgent.isStopped = false;
         navAgent.SetDestination(player.position);
 
-        // Play "Walk" animation if not already playing
         if (!animationComponent.IsPlaying("Walk"))
         {
             animationComponent.CrossFade("Walk");
@@ -73,14 +70,13 @@ public class EnemyAI : MonoBehaviour
             {
                 animationComponent.CrossFade("idle");
             }
-            return; // Exit and wait for cooldown
+            return;
         }
         if (Time.time < lastAttackTime + attackCooldown)
         {
-            return; // Exit and wait for cooldown
+            return;
         }
-
-        // Otherwise, attack
+        
         AttackPlayer();
     }
 
