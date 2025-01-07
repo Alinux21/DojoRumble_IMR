@@ -85,4 +85,12 @@ public class EnemyAI : MonoBehaviour
         lastAttackTime = Time.time + animationComponent["Attack"].length;
         animationComponent.CrossFade("Attack");
     }
+
+    public void OnHit()
+    {
+        // animationComponent.CrossFade("idle");
+        // Vector3 stepBackDirection = transform.position - player.position;
+        // stepBackDirection.Normalize();
+        // transform.position += stepBackDirection * 2f;
+    }
 }
