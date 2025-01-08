@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Interaction Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7696548424635294048, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -328,27 +332,13 @@ PrefabInstance:
       addedObject: {fileID: 554375266}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 07014d5ef849f7c44987388df28e02f0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 554375265}
+      addedObject: {fileID: 554375270}
   m_SourcePrefab: {fileID: 100100000, guid: 07014d5ef849f7c44987388df28e02f0, type: 3}
 --- !u!1 &554375264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 07014d5ef849f7c44987388df28e02f0, type: 3}
   m_PrefabInstance: {fileID: 554375263}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &554375265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554375264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 348b9e5507b25404cb6f21f619d3c637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: JapaneseGarden
-  maxHits: 5
 --- !u!65 &554375266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -370,6 +360,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.2, z: 0.009576749}
   m_Center: {x: 0, y: 0.00143723, z: -0.00063521485}
+--- !u!114 &554375270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554375264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2749fbf4b792a4b883007ab6184414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: JapaneseGarden
+  audioToPlay: {fileID: 8300000, guid: ade9e88ad6e2c0b47b0d1b25bb194678, type: 3}
 --- !u!1 &937581803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9014170783809206332, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
