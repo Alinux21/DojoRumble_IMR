@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -24,6 +23,6 @@ public class Player : MonoBehaviour, IDamageable
     private void Die()
     {
         Debug.Log("Player has died.");
-        SceneManager.LoadScene(nextScene);
+        FadeManager.Instance.FadeAndLoadScene(nextScene);
     }
 }

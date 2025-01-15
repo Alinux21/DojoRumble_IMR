@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public float attackRange = 2.5f;
     public float moveSpeed = 1.5f;
     public float attackCooldown = 0.5f;
+    public int combatMode = 1;
 
     private Animation animationComponent;
     private NavMeshAgent navAgent;
@@ -31,6 +32,17 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (combatMode == 0)
+        {
+            // Stop movement and play idle animation when inactive
+            navAgent.isStopped = true;
+            if (!animationComponent.IsPlaying("idle"))
+            {
+                animationComponent.CrossFade("idle");
+            }
+            return;
+        }
+
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Rotate to face the player
