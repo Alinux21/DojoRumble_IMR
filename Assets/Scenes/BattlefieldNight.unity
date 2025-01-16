@@ -396,7 +396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: DojoAsset
-  maxHealth: 100
+  maxHealth: 500
 --- !u!54 &341697844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -720,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_TagString
@@ -1003,6 +1003,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3127728407712097239, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127728407712097239, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3711799367079663623, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_SmoothTurnEnabled
       value: 1
@@ -1058,6 +1066,18 @@ PrefabInstance:
     - target: {fileID: 7696548424635294048, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873184977108000993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_CameraYOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873184977108000993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
