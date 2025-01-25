@@ -31,7 +31,7 @@ public class ProximityGlow : MonoBehaviour
         glowStrength = Mathf.Clamp01(glowStrength);
 
         // Debug logs to track values
-        Debug.Log($"Distance: {distance} | Glow Strength: {glowStrength} | Min: {minDistance} | Max: {maxDistance}");
+        //Debug.Log($"Distance: {distance} | Glow Strength: {glowStrength} | Min: {minDistance} | Max: {maxDistance}");
     
         // Update material emission
             Color currentEmission = baseEmissionColor * Mathf.Lerp(0, maxEmissionIntensity, glowStrength);
