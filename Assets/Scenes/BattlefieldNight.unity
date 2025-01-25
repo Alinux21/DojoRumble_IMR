@@ -179,6 +179,7 @@ MonoBehaviour:
   damage: 25
   bloodEffect: {fileID: 0}
   sparkEffect: {fileID: 0}
+  swordClashSound: {fileID: 0}
 --- !u!1 &272467988
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +323,7 @@ MonoBehaviour:
   damage: 25
   bloodEffect: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
   sparkEffect: {fileID: 5238538877814813142, guid: 47096eff328e11a418ace7db2d72aa97, type: 3}
+  swordClashSound: {fileID: 8300000, guid: 39bf4cdb7f4867b4786b3b83fafd9961, type: 3}
 --- !u!54 &306700252
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -397,6 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: DojoAsset
   maxHealth: 500
+  hitSound: {fileID: 0}
 --- !u!54 &341697844
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1110,6 +1113,22 @@ PrefabInstance:
     - target: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014170783809206330, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2499,6 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e079952a044d554e8f729cba067e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 276968042d588fc4bac6befe6b030677, type: 3}
 --- !u!114 &1887430887
 MonoBehaviour:
   m_ObjectHideFlags: 0

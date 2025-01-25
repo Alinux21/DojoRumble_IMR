@@ -5,6 +5,17 @@ public class Sword : MonoBehaviour
     public int damage = 25;
     public GameObject bloodEffect;
     public GameObject sparkEffect;
+    public AudioClip swordClashSound;
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +30,10 @@ public class Sword : MonoBehaviour
         if (other.CompareTag("Sword"))
         {
             InstantiateEffect(sparkEffect, transform.position);
+            if (swordClashSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(swordClashSound);
+            }
         }
     }
 
