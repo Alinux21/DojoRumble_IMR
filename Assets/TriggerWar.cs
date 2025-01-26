@@ -40,7 +40,6 @@ public class ProximityTrigger : MonoBehaviour
         {
             // Get current rotation (euler angles)
             Vector3 currentRotation = directionalLight.transform.eulerAngles;
-                            Debug.Log("Moving shit the night rotation!");
 
 
             // Check if we're close enough to the target rotation (within threshold)
