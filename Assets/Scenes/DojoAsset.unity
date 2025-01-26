@@ -2193,7 +2193,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueClips:
-  - {fileID: 8300000, guid: a74bdd4080e88c142a41cd1dda8f7afb, type: 3}
+  - {fileID: 8300000, guid: a2ca85537a9b8eb439d8b0ca254ed277, type: 3}
+  - {fileID: 8300000, guid: 01bfca7a724c2174896bfa6a08d1a25a, type: 3}
+  - {fileID: 8300000, guid: 4b8759c79f291fd4190a75c0efb5bc9c, type: 3}
+  - {fileID: 8300000, guid: 4dc06545d9d96254a8618eef7ce73977, type: 3}
+  - {fileID: 8300000, guid: e39a130b5ae47394f9f2022423e49a6e, type: 3}
+  - {fileID: 8300000, guid: 7554df3dfca14334b8fad11ab3f89b21, type: 3}
   audioSource: {fileID: 1489632392}
 --- !u!1001 &1505184130
 PrefabInstance:
