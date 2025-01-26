@@ -9,6 +9,7 @@ public class BowScript : MonoBehaviour
     public Animation animationComponent;
     public float bowDistance = 4f;
     public float bowHeightThreshold = 0.2f; // How much the player needs to lower their head
+    public float waitBeforeBow = 1f;
     
     private float initialCameraHeight;
     private bool hasBowed = false;
@@ -39,9 +40,8 @@ public class BowScript : MonoBehaviour
             {
                 if (!animationComponent.IsPlaying("bow"))
                 {
-                    animationComponent.Play("bow");
                     hasBowed = true;
-                    StartCoroutine(ReturnToIdle());
+                    StartCoroutine(DelayedBow());
                 }
             }
         }
@@ -52,6 +52,13 @@ public class BowScript : MonoBehaviour
             hasBowed = false;
             hasSetInitialHeight = false;
         }
+    }
+
+    IEnumerator DelayedBow()
+    {
+        yield return new WaitForSeconds(waitBeforeBow); // Wait for 1 second
+        animationComponent.Play("bow");
+        StartCoroutine(ReturnToIdle());
     }
 
     IEnumerator ReturnToIdle()
