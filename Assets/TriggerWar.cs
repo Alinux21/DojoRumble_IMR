@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ProximityTrigger : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ProximityTrigger : MonoBehaviour
     private bool mp3Triggered=false; 
 
     public Material nightSkybox; // Reference to the night skybox material
+    public string nextScene;
+
     void Start()
     {
         if (directionalLight == null)
@@ -64,6 +67,7 @@ public class ProximityTrigger : MonoBehaviour
                     audioSource.clip = mp3Clip;
                     audioSource.Play();  // Play the audio clip
                     Debug.Log("Playing MP3 file.");
+                    StartCoroutine(WaitForSecondsCoroutine());
                     mp3Triggered=true;
                 }
             }
@@ -87,6 +91,15 @@ public class ProximityTrigger : MonoBehaviour
             RenderSettings.skybox = nightSkybox;
         }
     }
+
+    private IEnumerator WaitForSecondsCoroutine()
+    {
+        Debug.Log("Waiting for 30 seconds...");
+        yield return new WaitForSeconds(30f);
+        Debug.Log("30 seconds have passed!");
+        FadeManager.Instance.FadeAndLoadScene(nextScene);
+    }
+
 
 }
 
