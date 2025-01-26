@@ -12,11 +12,30 @@ public class EnemyAI : MonoBehaviour
     private Animation animationComponent;
     private NavMeshAgent navAgent;
     private float lastAttackTime = 0f;
+    private AudioSource audioSource;
+    private bool isInitialWaiting = true;
+    private float waitEndTime;
+    public AudioClip startAudioClip;
+    public float initialWaitTime = 10f;
 
     void Start()
     {
         animationComponent = GetComponent<Animation>();
         navAgent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        // Set up initial waiting period
+        waitEndTime = Time.time + initialWaitTime;
+        if (startAudioClip != null)
+        {
+            audioSource.clip = startAudioClip;
+            audioSource.Play();
+        }
 
         if (animationComponent == null)
         {
@@ -32,6 +51,21 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        // Check if still in initial waiting period
+        if (isInitialWaiting)
+        {
+            if (Time.time < waitEndTime)
+            {
+                navAgent.isStopped = true;
+                if (!animationComponent.IsPlaying("idle"))
+                {
+                    animationComponent.CrossFade("idle");
+                }
+                return;
+            }
+            isInitialWaiting = false;
+        }
+
         if (combatMode == 0)
         {
             // Stop movement and play idle animation when inactive

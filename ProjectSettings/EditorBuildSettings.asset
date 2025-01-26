@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattlefieldNight.unity
     guid: c97b8f140e3481940b24d215454b4466
+  - enabled: 1
+    path: Assets/Scenes/CityWar.unity
+    guid: fe6ebd3b4728e554fbc986d602f94e9d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5f21a88a9e1e52e439e526bb04442723, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 21cc09f92c6d3604f99f562cce042a1a, type: 2}

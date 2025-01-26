@@ -2536,6 +2536,8 @@ MonoBehaviour:
   moveSpeed: 1.5
   attackCooldown: 4
   combatMode: 1
+  startAudioClip: {fileID: 8300000, guid: ef970df1f2ef6904db6b2e2aa43fa47e, type: 3}
+  initialWaitTime: 10
 --- !u!195 &1887430888
 NavMeshAgent:
   m_ObjectHideFlags: 0

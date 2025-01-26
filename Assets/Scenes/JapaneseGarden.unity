@@ -2019,6 +2019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: DojoAsset
   maxHealth: 100
+  hitSound: {fileID: 0}
 --- !u!54 &880972194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4300,7 +4301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2187449669427467095, guid: e156495aa9aa3424d85dac51d5fdbd21, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2794799584362372229, guid: e156495aa9aa3424d85dac51d5fdbd21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
