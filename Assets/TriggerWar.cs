@@ -11,6 +11,8 @@ public class ProximityTrigger : MonoBehaviour
     public AudioClip mp3Clip;            // MP3 audio clip to play
     private AudioSource audioSource;     // Reference to the AudioSource component
     private bool mp3Triggered=false; 
+
+    public Material nightSkybox; // Reference to the night skybox material
     void Start()
     {
         if (directionalLight == null)
@@ -56,6 +58,7 @@ public class ProximityTrigger : MonoBehaviour
                 isRotating = false;
                 directionalLight.transform.eulerAngles = targetNightRotation; // Ensure it's exactly at the target rotation
                 Debug.Log("Directional light reached the night rotation!");
+                StartSkyboxTransition();
                 if (audioSource != null && mp3Clip != null && mp3Triggered==false)
                 {
                     audioSource.clip = mp3Clip;
@@ -72,6 +75,17 @@ public class ProximityTrigger : MonoBehaviour
     {
         // Start rotating when the trigger is entered
         isRotating = true;
+    }
+
+
+    void StartSkyboxTransition()
+    {
+        // Set the skybox blend to the night one when rotation is done
+        if (nightSkybox != null)
+        {
+            // Make sure we switch skyboxes once the transition starts
+            RenderSettings.skybox = nightSkybox;
+        }
     }
 
 }
