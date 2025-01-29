@@ -28,6 +28,7 @@ public class BowScript : MonoBehaviour
         if (distance < bowDistance && !hasSetInitialHeight)
         {
             initialCameraHeight = currentHeight;
+            Debug.Log("Initial height set to " + initialCameraHeight);
             hasSetInitialHeight = true;
         }
 
