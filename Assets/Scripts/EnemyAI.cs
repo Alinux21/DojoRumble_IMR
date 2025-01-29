@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; // For UI components like Button
 using UnityEngine.AI; // For navigation AI
 
 public class EnemyAI : MonoBehaviour
@@ -14,9 +15,13 @@ public class EnemyAI : MonoBehaviour
     private float lastAttackTime = 0f;
     private AudioSource audioSource;
     private bool isInitialWaiting = true;
+    private bool waitingForStart = true; // Wait for button press
     private float waitEndTime;
     public AudioClip startAudioClip;
     public float initialWaitTime = 10f;
+
+    public Button startButton; // UI Button for starting the AI
+    public Canvas uiCanvas;    // Canvas to hide when the button is pressed
 
     void Start()
     {
@@ -29,14 +34,6 @@ public class EnemyAI : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        // Set up initial waiting period
-        waitEndTime = Time.time + initialWaitTime;
-        if (startAudioClip != null)
-        {
-            audioSource.clip = startAudioClip;
-            audioSource.Play();
-        }
-
         if (animationComponent == null)
         {
             Debug.LogError("No Animation component found on this GameObject. Add an Animation component and assign animations.");
@@ -47,10 +44,28 @@ public class EnemyAI : MonoBehaviour
         {
             Debug.LogError("Animations 'Walk', 'Attack', and 'idle' are missing. Ensure they are assigned in the Animation component.");
         }
+
+        // Assign button's onClick event if startButton is set in the Inspector
+        if (startButton != null)
+        {
+            startButton.onClick.AddListener(StartEnemyAI);
+        }
+
+        navAgent.isStopped = true; // Ensure the enemy doesn't move while waiting
     }
 
     void Update()
     {
+        // Wait for a button press to start
+        if (waitingForStart)
+        {
+            if (!animationComponent.IsPlaying("idle"))
+            {
+                animationComponent.CrossFade("idle");
+            }
+            return;
+        }
+
         // Check if still in initial waiting period
         if (isInitialWaiting)
         {
@@ -94,6 +109,24 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    public void StartEnemyAI() // Called by the button press
+    {
+        waitingForStart = false; // Mark that the start button was pressed
+        waitEndTime = Time.time + initialWaitTime; // Set the initial waiting period
+
+        if (startAudioClip != null)
+        {
+            audioSource.clip = startAudioClip;
+            audioSource.Play();
+        }
+
+        // Hide the UI Canvas
+        if (uiCanvas != null)
+        {
+            uiCanvas.gameObject.SetActive(false);
+        }
+    }
+
     void ChasePlayer()
     {
         navAgent.isStopped = false;
@@ -122,7 +155,7 @@ public class EnemyAI : MonoBehaviour
         {
             return;
         }
-        
+
         AttackPlayer();
     }
 

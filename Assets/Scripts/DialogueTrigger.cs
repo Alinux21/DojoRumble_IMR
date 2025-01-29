@@ -11,6 +11,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("Player entered trigger zone.");
             PlayRandomDialogue();
+            if(GlobalManager.GetsamuraiTalks()==false){
+                GlobalManager.SetsamuraiTalks(true);
+            }
         }
         else
         {

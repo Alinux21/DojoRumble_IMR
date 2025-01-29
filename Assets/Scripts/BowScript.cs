@@ -59,6 +59,10 @@ public class BowScript : MonoBehaviour
         yield return new WaitForSeconds(waitBeforeBow); // Wait for 1 second
         animationComponent.Play("bow");
         StartCoroutine(ReturnToIdle());
+        
+        if(GlobalManager.GetteaRitual()==false){
+            GlobalManager.SetteaRitual(true);
+        }
     }
 
     IEnumerator ReturnToIdle()
